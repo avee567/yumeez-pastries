@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome | Yummy's Pastries</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .splash {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      background: url('background.jpeg') no-repeat center center;
+      background-size: cover;
+      position: relative;
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    .text {
+      z-index: 1;
+      color: #ffe8c2;
+      text-shadow: 0 0 20px rgba(255, 232, 194, 0.8);
+      font-size: 4rem;
+      font-weight: bold;
+      text-align: center;
+      animation: fadeInUp 1s ease forwards;
+      opacity: 0;
+    }
+
+    .text:nth-child(1) { animation-delay: 0.5s; }
+    .text:nth-child(2) { animation-delay: 1.2s; }
+    .text:nth-child(3) { animation-delay: 1.9s; }
+    .text:nth-child(4) { animation-delay: 2.6s; }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="splash">
+    <div class="overlay"></div>
+    <div class="text">Welcome</div>
+    <div class="text">to</div>
+    <div class="text">Yummy's</div>
+    <div class="text">Pastries</div>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      window.location.href = "menu.html";
+    }, 5000); // Redirect after 5 seconds
+  </script>
+</body>
+</html>
