@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Menu | Yumeez Pastries</title>
+
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fffaf4;
+      color: #333;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #f5d6a6;
+      display: flex;
+      justify-content: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      padding: 1rem;
+    }
+
+    nav ul li {
+      margin: 0 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #5e3a00;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .spacer {
+      height: 80px;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin: 20px auto;
+    }
+
+    .tabs button {
+      background-color: #fae5c3;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    .tabs button:hover {
+      background-color: #f2ca9d;
+    }
+
+    .tab-content {
+      display: none;
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff3e0;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .tab-content h2 {
+      margin-bottom: 10px;
+      color: #c44a00;
+    }
+
+    .item {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #ddd;
+      padding: 8px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="ceo.html">CEO</a></li>
+      <li><a href="history.html">History</a></li>
+      <li><a href="index.html">Home</a></li>
+    </ul>
+  </nav>
+
+  <div class="spacer"></div>
+
+  <div class="tabs" data-aos="fade-up">
+    <button onclick="showTab('dessert')">Dessert</button>
+    <button onclick="showTab('appetizer')">Appetizer</button>
+    <button onclick="showTab('main')">Main Dish</button>
+    <button onclick="showTab('drinks')">Drinks</button>
+    <button onclick="showTab('accessories')">Accessories</button>
+  </div>
+
+  <div id="dessert" class="tab-content active" data-aos="fade-up">
+    <h2>Desserts</h2>
+    <div class="item"><span>Chocolate Cake</span><span>$10</span></div>
+    <div class="item"><span>Red Velvet Cupcake</span><span>$5</span></div>
+    <div class="item"><span>Strawberry Tart</span><span>$7</span></div>
+  </div>
+
+  <div id="appetizer" class="tab-content" data-aos="fade-up">
+    <h2>Appetizers</h2>
+    <div class="item"><span>Garlic Bread</span><span>$4</span></div>
+    <div class="item"><span>Mini Spring Rolls</span><span>$6</span></div>
+  </div>
+
+  <div id="main" class="tab-content" data-aos="fade-up">
+    <h2>Main Dishes</h2>
+    <div class="item"><span>Grilled Chicken Pasta</span><span>$12</span></div>
+    <div class="item"><span>Beef Lasagna</span><span>$13</span></div>
+  </div>
+
+  <div id="drinks" class="tab-content" data-aos="fade-up">
+    <h2>Drinks</h2>
+    <div class="item"><span>Fruit Juice</span><span>$3</span></div>
+    <div class="item"><span>Iced Tea</span><span>$2.5</span></div>
+  </div>
+
+  <div id="accessories" class="tab-content" data-aos="fade-up">
+    <h2>Accessories</h2>
+    <div class="item"><span>Napkins Pack</span><span>$1</span></div>
+    <div class="item"><span>Disposable Cutlery Set</span><span>$1.5</span></div>
+  </div>
+
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    function showTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(div => {
+        div.classList.remove('active');
+      });
+      document.getElementById(tabId).classList.add('active');
+    }
+  </script>
+</body>
+</html>
